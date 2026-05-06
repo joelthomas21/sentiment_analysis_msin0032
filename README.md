@@ -1,4 +1,4 @@
-# Sentiment Analysis Pipeline 
+# Sentiment Analysis Pipeline — RevEUR Stablecoin Dissertation
 
 Sentiment analysis of Revolut user reviews to assess baseline platform trust as a necessary condition for stablecoin adoption. Part of the MSIN0032 Management Science Dissertation, UCL.
 
@@ -100,4 +100,5 @@ python 07_build_coding_sample.py
 python 08_aggregate_themes.py
 ```
 
+**Note on step 7 → 8**: `07_build_coding_sample.py` outputs an Excel file in `data/clean/` that must be manually coded before running step 8. The coding process involves assigning primary/secondary focus categories and theme codes to each review in the spreadsheet. The codebook sheet in the Excel file documents all 14 themes and their definitions.
 
