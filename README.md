@@ -1,4 +1,4 @@
-# Sentiment Analysis Pipeline — RevEUR Stablecoin Dissertation
+# Sentiment Analysis Pipeline 
 
 Sentiment analysis of Revolut user reviews to assess baseline platform trust as a necessary condition for stablecoin adoption. Part of the MSIN0032 Management Science Dissertation, UCL.
 
@@ -57,8 +57,8 @@ Requires Python 3.10+.
 
 ```bash
 # Clone the repository
-git clone https://github.com/joelthomas21/msin0032-sentiment-analysis.git
-cd msin0032-sentiment-analysis
+git clone https://github.com/joelthomas21/sentiment-analysis-msin0032.git
+cd sentiment-analysis-msin0032
 
 # Create a virtual environment (recommended)
 python -m venv venv
@@ -100,15 +100,4 @@ python 07_build_coding_sample.py
 python 08_aggregate_themes.py
 ```
 
-**Note on step 7 → 8**: `07_build_coding_sample.py` outputs an Excel file in `data/clean/` that must be manually coded before running step 8. The coding process involves assigning primary/secondary focus categories and theme codes to each review in the spreadsheet. The codebook sheet in the Excel file documents all 14 themes and their definitions.
 
-## Key Design Decisions
-
-- **Word-boundary regex** in `keyword_filter.py` prevents false positives (e.g. "eth" in "whether", "dai" in "daily").
-- **Equal sentiment stratification** (100/100/40) prioritises theme discovery over population-representative frequency estimation.
-- **Extended VADER lexicon** (23 terms) handles fintech-specific vocabulary that standard VADER misinterprets (e.g. "frozen" as strongly negative in a banking context).
-- **Parallel VADER and star-based stratification** in `08_aggregate_themes.py` provides a robustness check: if the same themes rank highest under both approaches, the findings are not an artefact of VADER's scoring.
-
-## Data
-
-Raw scraped data is not included in the repository for reproducibility and copyright reasons. Running the scrapers will produce fresh data from the same sources, though the exact reviews returned may differ over time as platforms update their listings.
