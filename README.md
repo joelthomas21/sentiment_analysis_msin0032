@@ -71,7 +71,13 @@ pip install -r requirements.txt
 
 ## Running the Pipeline
 
-**Steps 1–3 (scrapers)** should be run from a local machine, not a sandboxed environment, because Google Play and Apple App Store block non-residential IPs. Trustpilot has a login wall after approximately 10 pages.
+> **Note for markers**: Steps 1–3 (scrapers) require a residential IP address. 
+> Google Play, App Store, and Trustpilot block requests from cloud or 
+> institutional networks. The cleaned and coded data is already provided 
+> in `data/clean/`, so you can skip directly to step 4.
+
+### If you want to reproduce the scraping (optional)
+Run from a personal machine on a home network:
 
 ```bash
 # Scrape (run from local machine)
@@ -83,7 +89,10 @@ python 03b_scrape_app_store_revolut_x.py
 
 # Filter
 python 00_refilter.py
+```
 
+### To reproduce the analysis (start here)
+```bash
 # Clean and merge
 python 04_clean_reviews.py
 
